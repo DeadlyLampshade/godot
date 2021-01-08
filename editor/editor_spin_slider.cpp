@@ -491,9 +491,13 @@ void EditorSpinSlider::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("is_using_custom_label_color"), &EditorSpinSlider::is_using_custom_label_color);
 
 	ClassDB::bind_method(D_METHOD("setup_custom_label_color", "use_custom_label_color", "custom_label_color"), &EditorSpinSlider::setup_custom_label_color);
+
+	ClassDB::bind_method(D_METHOD("set_hide_slider", "hide"), &EditorSpinSlider::set_hide_slider);
+	ClassDB::bind_method(D_METHOD("is_hiding_slider"), &EditorSpinSlider::is_hiding_slider);
 	
 	ADD_PROPERTY(PropertyInfo(Variant::COLOR, "custom_label_color"), "set_custom_label_color", "get_custom_label_color");
 	ADD_PROPERTY(PropertyInfo(Variant::BOOL, "using_custom_label_color"), "set_use_custom_label_color", "is_using_custom_label_color");
+	ADD_PROPERTY(PropertyInfo(Variant::BOOL, "hide_slider"), "set_hide_slider", "is_hiding_slider");
 	ADD_PROPERTY(PropertyInfo(Variant::STRING, "label"), "set_label", "get_label");
 	ADD_PROPERTY(PropertyInfo(Variant::BOOL, "read_only"), "set_read_only", "is_read_only");
 	ADD_PROPERTY(PropertyInfo(Variant::BOOL, "flat"), "set_flat", "is_flat");
