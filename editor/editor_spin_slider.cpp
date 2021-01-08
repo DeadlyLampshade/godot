@@ -458,9 +458,25 @@ bool EditorSpinSlider::is_flat() const {
 	return flat;
 }
 
-void EditorSpinSlider::set_custom_label_color(bool p_use_custom_label_color, Color p_custom_label_color) {
+void EditorSpinSlider::setup_custom_label_color(bool p_use_custom_label_color, Color p_custom_label_color) {
 	use_custom_label_color = p_use_custom_label_color;
 	custom_label_color = p_custom_label_color;
+}
+
+void EditorSpinSlider::set_custom_label_color(Color p_custom_label_color) {
+	custom_label_color = p_custom_label_color;
+}
+
+Color EditorSpinSlider::get_custom_label_color() {
+	return custom_label_color;
+}
+
+void EditorSpinSlider::set_use_custom_label_color(bool p_use_custom_label_color) {
+	use_custom_label_color = p_use_custom_label_color;
+}
+
+bool EditorSpinSlider::is_using_custom_label_color() {
+	return use_custom_label_color;
 }
 
 void EditorSpinSlider::_focus_entered() {
@@ -485,6 +501,14 @@ void EditorSpinSlider::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_flat", "flat"), &EditorSpinSlider::set_flat);
 	ClassDB::bind_method(D_METHOD("is_flat"), &EditorSpinSlider::is_flat);
 
+	ClassDB::bind_method(D_METHOD("set_custom_label_color", "custom_label_color"), &EditorSpinSlider::set_custom_label_color);
+	ClassDB::bind_method(D_METHOD("get_custom_label_color"), &EditorSpinSlider::get_custom_label_color);
+
+	ClassDB::bind_method(D_METHOD("set_use_custom_label_color", "use_custom_label_color"), &EditorSpinSlider::set_custom_label_color);
+	ClassDB::bind_method(D_METHOD("is_using_custom_label_color"), &EditorSpinSlider::is_using_custom_label_color);
+
+	ClassDB::bind_method(D_METHOD("setup_custom_label_color", "use_custom_label_color", "custom_label_color"), &EditorSpinSlider::setup_custom_label_color);
+
 	ClassDB::bind_method(D_METHOD("_gui_input"), &EditorSpinSlider::_gui_input);
 	ClassDB::bind_method(D_METHOD("_grabber_mouse_entered"), &EditorSpinSlider::_grabber_mouse_entered);
 	ClassDB::bind_method(D_METHOD("_grabber_mouse_exited"), &EditorSpinSlider::_grabber_mouse_exited);
@@ -496,6 +520,8 @@ void EditorSpinSlider::_bind_methods() {
 	ADD_PROPERTY(PropertyInfo(Variant::STRING, "label"), "set_label", "get_label");
 	ADD_PROPERTY(PropertyInfo(Variant::BOOL, "read_only"), "set_read_only", "is_read_only");
 	ADD_PROPERTY(PropertyInfo(Variant::BOOL, "flat"), "set_flat", "is_flat");
+	ADD_PROPERTY(PropertyInfo(Variant::COLOR, "custom_label_color"), "set_custom_label_color", "get_custom_label_color");
+	ADD_PROPERTY(PropertyInfo(Variant::BOOL, "use_custom_label_color"), "set_use_custom_label_color", "is_using_custom_label_color");
 }
 
 EditorSpinSlider::EditorSpinSlider() {

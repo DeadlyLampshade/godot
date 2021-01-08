@@ -1202,7 +1202,7 @@ void EditorPropertyVector2::_notification(int p_what) {
 
 			Color c = base;
 			c.set_hsv(float(i) / 3.0 + 0.05, c.get_s() * 0.75, c.get_v());
-			spin[i]->set_custom_label_color(true, c);
+			spin[i]->setup_custom_label_color(true, c);
 		}
 	}
 }
@@ -1286,7 +1286,7 @@ void EditorPropertyRect2::_notification(int p_what) {
 
 			Color c = base;
 			c.set_hsv(float(i % 2) / 3.0 + 0.05, c.get_s() * 0.75, c.get_v());
-			spin[i]->set_custom_label_color(true, c);
+			spin[i]->setup_custom_label_color(true, c);
 		}
 	}
 }
@@ -1368,7 +1368,7 @@ void EditorPropertyVector3::_notification(int p_what) {
 
 			Color c = base;
 			c.set_hsv(float(i) / 3.0 + 0.05, c.get_s() * 0.75, c.get_v());
-			spin[i]->set_custom_label_color(true, c);
+			spin[i]->setup_custom_label_color(true, c);
 		}
 	}
 }
@@ -1450,7 +1450,7 @@ void EditorPropertyPlane::_notification(int p_what) {
 
 			Color c = base;
 			c.set_hsv(float(i) / 3.0 + 0.05, c.get_s() * 0.75, c.get_v());
-			spin[i]->set_custom_label_color(true, c);
+			spin[i]->setup_custom_label_color(true, c);
 		}
 	}
 }
@@ -1534,7 +1534,7 @@ void EditorPropertyQuat::_notification(int p_what) {
 
 			Color c = base;
 			c.set_hsv(float(i) / 3.0 + 0.05, c.get_s() * 0.75, c.get_v());
-			spin[i]->set_custom_label_color(true, c);
+			spin[i]->setup_custom_label_color(true, c);
 		}
 	}
 }
@@ -1623,7 +1623,7 @@ void EditorPropertyAABB::_notification(int p_what) {
 
 			Color c = base;
 			c.set_hsv(float(i % 3) / 3.0 + 0.05, c.get_s() * 0.75, c.get_v());
-			spin[i]->set_custom_label_color(true, c);
+			spin[i]->setup_custom_label_color(true, c);
 		}
 	}
 }
@@ -1699,7 +1699,7 @@ void EditorPropertyTransform2D::_notification(int p_what) {
 
 			Color c = base;
 			c.set_hsv(float(i % 2) / 3.0 + 0.05, c.get_s() * 0.75, c.get_v());
-			spin[i]->set_custom_label_color(true, c);
+			spin[i]->setup_custom_label_color(true, c);
 		}
 	}
 }
@@ -1780,7 +1780,7 @@ void EditorPropertyBasis::_notification(int p_what) {
 
 			Color c = base;
 			c.set_hsv(float(i % 3) / 3.0 + 0.05, c.get_s() * 0.75, c.get_v());
-			spin[i]->set_custom_label_color(true, c);
+			spin[i]->setup_custom_label_color(true, c);
 		}
 	}
 }
@@ -1867,7 +1867,7 @@ void EditorPropertyTransform::_notification(int p_what) {
 
 			Color c = base;
 			c.set_hsv(float(i % 3) / 3.0 + 0.05, c.get_s() * 0.75, c.get_v());
-			spin[i]->set_custom_label_color(true, c);
+			spin[i]->setup_custom_label_color(true, c);
 		}
 	}
 }
