@@ -102,7 +102,12 @@ public:
 	void set_flat(bool p_enable);
 	bool is_flat() const;
 
-	void set_custom_label_color(bool p_use_custom_label_color, Color p_custom_label_color);
+	void setup_custom_label_color(bool p_use_custom_label_color, Color p_custom_label_color);
+	void set_custom_label_color(Color p_custom_label_color);
+	Color get_custom_label_color();
+
+	void set_use_custom_label_color(bool p_use_custom_label_color);
+	bool is_using_custom_label_color();
 
 	void setup_and_show() { _focus_entered(); }
 	LineEdit *get_line_edit() { return value_input; }

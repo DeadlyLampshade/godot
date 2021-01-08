@@ -53,7 +53,7 @@ void OpenTypeFeaturesEditor::_notification(int p_what) {
 
 		button->set_icon(get_theme_icon("Remove", "EditorIcons"));
 		button->set_size(get_theme_icon("Remove", "EditorIcons")->get_size());
-		spin->set_custom_label_color(true, base);
+		spin->setup_custom_label_color(true, base);
 	}
 }
 
